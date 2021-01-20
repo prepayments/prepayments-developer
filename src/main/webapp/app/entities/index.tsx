@@ -10,6 +10,7 @@ import PrepaymentData from './prepayment-data';
 import PrepsFileType from './preps/preps-file-type';
 import PrepsFileUpload from './preps/preps-file-upload';
 import PrepsMessageToken from './preps/preps-message-token';
+import CompilationRequest from './compilation-request';
 /* jhipster-needle-add-route-import - JHipster will add routes here */
 
 const Routes = ({ match }) => (
@@ -22,6 +23,7 @@ const Routes = ({ match }) => (
       <ErrorBoundaryRoute path={`${match.url}preps-file-type`} component={PrepsFileType} />
       <ErrorBoundaryRoute path={`${match.url}preps-file-upload`} component={PrepsFileUpload} />
       <ErrorBoundaryRoute path={`${match.url}preps-message-token`} component={PrepsMessageToken} />
+      <ErrorBoundaryRoute path={`${match.url}compilation-request`} component={CompilationRequest} />
       {/* jhipster-needle-add-route-path - JHipster will add routes here */}
     </Switch>
   </div>

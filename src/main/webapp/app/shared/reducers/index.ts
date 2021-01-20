@@ -35,6 +35,10 @@ import prepsFileUpload, {
 import prepsMessageToken, {
   PrepsMessageTokenState
 } from 'app/entities/preps/preps-message-token/preps-message-token.reducer';
+// prettier-ignore
+import compilationRequest, {
+  CompilationRequestState
+} from 'app/entities/compilation-request/compilation-request.reducer';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
 
 export interface IRootState {
@@ -53,6 +57,7 @@ export interface IRootState {
   readonly prepsFileType: PrepsFileTypeState;
   readonly prepsFileUpload: PrepsFileUploadState;
   readonly prepsMessageToken: PrepsMessageTokenState;
+  readonly compilationRequest: CompilationRequestState;
   /* jhipster-needle-add-reducer-type - JHipster will add reducer type here */
   readonly loadingBar: any;
 }
@@ -73,6 +78,7 @@ const rootReducer = combineReducers<IRootState>({
   prepsFileType,
   prepsFileUpload,
   prepsMessageToken,
+  compilationRequest,
   /* jhipster-needle-add-reducer-combine - JHipster will add reducer here */
   loadingBar,
 });
