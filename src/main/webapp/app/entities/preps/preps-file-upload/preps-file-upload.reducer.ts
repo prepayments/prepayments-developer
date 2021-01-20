@@ -109,7 +109,7 @@ export default (state: PrepsFileUploadState = initialState, action): PrepsFileUp
   }
 };
 
-const apiUrl = 'api/preps-file-uploads';
+const apiUrl = 'api/app/file-uploads';
 
 // Actions
 
