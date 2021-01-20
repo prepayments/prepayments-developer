@@ -7,7 +7,7 @@
     "clientPackageManager": "npm",
     "clientFramework": "react",
     "clientTheme": "flatly",
-    "clientThemeVariant": "light",
+    "clientThemeVariant": "primary",
     "authenticationType": "jwt",
     "cacheProvider": "no",
     "databaseType": "sql",

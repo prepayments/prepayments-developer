@@ -1,9 +1,9 @@
 {
   "name": "prepayments-dev",
   "version": "0.0.1-SNAPSHOT",
-  "description": "Description for prepaymentsDev",
+  "description": "React client for prepayments developer edition",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "GPLv3",
   "cacheDirectories": [
     "node_modules"
   ],
