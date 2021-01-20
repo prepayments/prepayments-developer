@@ -11,6 +11,30 @@ import activate, { ActivateState } from 'app/modules/account/activate/activate.r
 import password, { PasswordState } from 'app/modules/account/password/password.reducer';
 import settings, { SettingsState } from 'app/modules/account/settings/settings.reducer';
 import passwordReset, { PasswordResetState } from 'app/modules/account/password-reset/password-reset.reducer';
+// prettier-ignore
+import amortizationEntry, {
+  AmortizationEntryState
+} from 'app/entities/amortization-entry/amortization-entry.reducer';
+// prettier-ignore
+import prepaymentEntry, {
+  PrepaymentEntryState
+} from 'app/entities/prepayment-entry/prepayment-entry.reducer';
+// prettier-ignore
+import prepaymentData, {
+  PrepaymentDataState
+} from 'app/entities/prepayment-data/prepayment-data.reducer';
+// prettier-ignore
+import prepsFileType, {
+  PrepsFileTypeState
+} from 'app/entities/preps/preps-file-type/preps-file-type.reducer';
+// prettier-ignore
+import prepsFileUpload, {
+  PrepsFileUploadState
+} from 'app/entities/preps/preps-file-upload/preps-file-upload.reducer';
+// prettier-ignore
+import prepsMessageToken, {
+  PrepsMessageTokenState
+} from 'app/entities/preps/preps-message-token/preps-message-token.reducer';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
 
 export interface IRootState {
@@ -23,6 +47,12 @@ export interface IRootState {
   readonly passwordReset: PasswordResetState;
   readonly password: PasswordState;
   readonly settings: SettingsState;
+  readonly amortizationEntry: AmortizationEntryState;
+  readonly prepaymentEntry: PrepaymentEntryState;
+  readonly prepaymentData: PrepaymentDataState;
+  readonly prepsFileType: PrepsFileTypeState;
+  readonly prepsFileUpload: PrepsFileUploadState;
+  readonly prepsMessageToken: PrepsMessageTokenState;
   /* jhipster-needle-add-reducer-type - JHipster will add reducer type here */
   readonly loadingBar: any;
 }
@@ -37,6 +67,12 @@ const rootReducer = combineReducers<IRootState>({
   passwordReset,
   password,
   settings,
+  amortizationEntry,
+  prepaymentEntry,
+  prepaymentData,
+  prepsFileType,
+  prepsFileUpload,
+  prepsMessageToken,
   /* jhipster-needle-add-reducer-combine - JHipster will add reducer here */
   loadingBar,
 });
