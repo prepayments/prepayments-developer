@@ -101,7 +101,7 @@ export default (state: CompilationRequestState = initialState, action): Compilat
   }
 };
 
-const apiUrl = 'api/compilation-requests';
+const apiUrl = 'api/app/compilation-requests';
 const apiSearchUrl = 'api/_search/compilation-requests';
 
 // Actions
