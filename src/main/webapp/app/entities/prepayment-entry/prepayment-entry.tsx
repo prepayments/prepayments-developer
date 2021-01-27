@@ -165,6 +165,12 @@ export const PrepaymentEntry = (props: IPrepaymentEntryProps) => {
                 <th className="hand" onClick={sort('uploadToken')}>
                   Upload Token <FontAwesomeIcon icon="sort" />
                 </th>
+                <th className="hand" onClick={sort('prepaymentDataId')}>
+                  Prepayment Data Id <FontAwesomeIcon icon="sort" />
+                </th>
+                <th className="hand" onClick={sort('compilationToken')}>
+                  Compilation Token <FontAwesomeIcon icon="sort" />
+                </th>
                 <th />
               </tr>
             </thead>
@@ -187,6 +193,8 @@ export const PrepaymentEntry = (props: IPrepaymentEntryProps) => {
                   </td>
                   <td>{prepaymentEntry.transactionAmount}</td>
                   <td>{prepaymentEntry.uploadToken}</td>
+                  <td>{prepaymentEntry.prepaymentDataId}</td>
+                  <td>{prepaymentEntry.compilationToken}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${prepaymentEntry.id}`} color="info" size="sm">

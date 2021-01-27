@@ -69,6 +69,14 @@ export const AmortizationEntryDetail = (props: IAmortizationEntryDetailProps) =>
             <span id="uploadToken">Upload Token</span>
           </dt>
           <dd>{amortizationEntryEntity.uploadToken}</dd>
+          <dt>
+            <span id="prepaymentDataId">Prepayment Data Id</span>
+          </dt>
+          <dd>{amortizationEntryEntity.prepaymentDataId}</dd>
+          <dt>
+            <span id="compilationToken">Compilation Token</span>
+          </dt>
+          <dd>{amortizationEntryEntity.compilationToken}</dd>
         </dl>
         <Button tag={Link} to="/amortization-entry" replace color="info">
           <FontAwesomeIcon icon="arrow-left" /> <span className="d-none d-md-inline">Back</span>

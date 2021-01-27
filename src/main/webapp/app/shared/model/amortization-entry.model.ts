@@ -11,6 +11,8 @@ export interface IAmortizationEntry {
   transactionAmount?: number;
   amortizationDate?: string;
   uploadToken?: string;
+  prepaymentDataId?: number;
+  compilationToken?: string;
 }
 
 export const defaultValue: Readonly<IAmortizationEntry> = {};

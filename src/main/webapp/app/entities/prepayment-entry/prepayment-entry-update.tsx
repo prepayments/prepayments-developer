@@ -113,6 +113,18 @@ export const PrepaymentEntryUpdate = (props: IPrepaymentEntryUpdateProps) => {
                 </Label>
                 <AvField id="prepayment-entry-uploadToken" type="text" name="uploadToken" />
               </AvGroup>
+              <AvGroup>
+                <Label id="prepaymentDataIdLabel" for="prepayment-entry-prepaymentDataId">
+                  Prepayment Data Id
+                </Label>
+                <AvField id="prepayment-entry-prepaymentDataId" type="string" className="form-control" name="prepaymentDataId" />
+              </AvGroup>
+              <AvGroup>
+                <Label id="compilationTokenLabel" for="prepayment-entry-compilationToken">
+                  Compilation Token
+                </Label>
+                <AvField id="prepayment-entry-compilationToken" type="text" name="compilationToken" />
+              </AvGroup>
               <Button tag={Link} id="cancel-save" to="/prepayment-entry" replace color="info">
                 <FontAwesomeIcon icon="arrow-left" />
                 &nbsp;

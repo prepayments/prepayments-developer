@@ -171,6 +171,12 @@ export const AmortizationEntry = (props: IAmortizationEntryProps) => {
                 <th className="hand" onClick={sort('uploadToken')}>
                   Upload Token <FontAwesomeIcon icon="sort" />
                 </th>
+                <th className="hand" onClick={sort('prepaymentDataId')}>
+                  Prepayment Data Id <FontAwesomeIcon icon="sort" />
+                </th>
+                <th className="hand" onClick={sort('compilationToken')}>
+                  Compilation Token <FontAwesomeIcon icon="sort" />
+                </th>
                 <th />
               </tr>
             </thead>
@@ -199,6 +205,8 @@ export const AmortizationEntry = (props: IAmortizationEntryProps) => {
                     ) : null}
                   </td>
                   <td>{amortizationEntry.uploadToken}</td>
+                  <td>{amortizationEntry.prepaymentDataId}</td>
+                  <td>{amortizationEntry.compilationToken}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${amortizationEntry.id}`} color="info" size="sm">

@@ -125,6 +125,18 @@ export const AmortizationEntryUpdate = (props: IAmortizationEntryUpdateProps) =>
                 </Label>
                 <AvField id="amortization-entry-uploadToken" type="text" name="uploadToken" />
               </AvGroup>
+              <AvGroup>
+                <Label id="prepaymentDataIdLabel" for="amortization-entry-prepaymentDataId">
+                  Prepayment Data Id
+                </Label>
+                <AvField id="amortization-entry-prepaymentDataId" type="string" className="form-control" name="prepaymentDataId" />
+              </AvGroup>
+              <AvGroup>
+                <Label id="compilationTokenLabel" for="amortization-entry-compilationToken">
+                  Compilation Token
+                </Label>
+                <AvField id="amortization-entry-compilationToken" type="text" name="compilationToken" />
+              </AvGroup>
               <Button tag={Link} id="cancel-save" to="/amortization-entry" replace color="info">
                 <FontAwesomeIcon icon="arrow-left" />
                 &nbsp;

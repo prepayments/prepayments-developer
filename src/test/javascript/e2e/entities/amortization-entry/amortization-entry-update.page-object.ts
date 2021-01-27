@@ -16,6 +16,8 @@ export default class AmortizationEntryUpdatePage {
   transactionAmountInput: ElementFinder = element(by.css('input#amortization-entry-transactionAmount'));
   amortizationDateInput: ElementFinder = element(by.css('input#amortization-entry-amortizationDate'));
   uploadTokenInput: ElementFinder = element(by.css('input#amortization-entry-uploadToken'));
+  prepaymentDataIdInput: ElementFinder = element(by.css('input#amortization-entry-prepaymentDataId'));
+  compilationTokenInput: ElementFinder = element(by.css('input#amortization-entry-compilationToken'));
 
   getPageTitle() {
     return this.pageTitle;
@@ -93,6 +95,22 @@ export default class AmortizationEntryUpdatePage {
     return this.uploadTokenInput.getAttribute('value');
   }
 
+  async setPrepaymentDataIdInput(prepaymentDataId) {
+    await this.prepaymentDataIdInput.sendKeys(prepaymentDataId);
+  }
+
+  async getPrepaymentDataIdInput() {
+    return this.prepaymentDataIdInput.getAttribute('value');
+  }
+
+  async setCompilationTokenInput(compilationToken) {
+    await this.compilationTokenInput.sendKeys(compilationToken);
+  }
+
+  async getCompilationTokenInput() {
+    return this.compilationTokenInput.getAttribute('value');
+  }
+
   async save() {
     await this.saveButton.click();
   }
@@ -133,6 +151,12 @@ export default class AmortizationEntryUpdatePage {
     await waitUntilDisplayed(this.saveButton);
     await this.setUploadTokenInput('uploadToken');
     expect(await this.getUploadTokenInput()).to.match(/uploadToken/);
+    await waitUntilDisplayed(this.saveButton);
+    await this.setPrepaymentDataIdInput('5');
+    expect(await this.getPrepaymentDataIdInput()).to.eq('5');
+    await waitUntilDisplayed(this.saveButton);
+    await this.setCompilationTokenInput('compilationToken');
+    expect(await this.getCompilationTokenInput()).to.match(/compilationToken/);
     await this.save();
     await waitUntilHidden(this.saveButton);
     expect(await isVisible(this.saveButton)).to.be.false;

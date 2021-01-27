@@ -9,6 +9,8 @@ export interface IPrepaymentEntry {
   prepaymentDate?: string;
   transactionAmount?: number;
   uploadToken?: string;
+  prepaymentDataId?: number;
+  compilationToken?: string;
 }
 
 export const defaultValue: Readonly<IPrepaymentEntry> = {};

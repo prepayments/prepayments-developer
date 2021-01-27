@@ -57,6 +57,14 @@ export const PrepaymentEntryDetail = (props: IPrepaymentEntryDetailProps) => {
             <span id="uploadToken">Upload Token</span>
           </dt>
           <dd>{prepaymentEntryEntity.uploadToken}</dd>
+          <dt>
+            <span id="prepaymentDataId">Prepayment Data Id</span>
+          </dt>
+          <dd>{prepaymentEntryEntity.prepaymentDataId}</dd>
+          <dt>
+            <span id="compilationToken">Compilation Token</span>
+          </dt>
+          <dd>{prepaymentEntryEntity.compilationToken}</dd>
         </dl>
         <Button tag={Link} to="/prepayment-entry" replace color="info">
           <FontAwesomeIcon icon="arrow-left" /> <span className="d-none d-md-inline">Back</span>
