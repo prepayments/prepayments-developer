@@ -1,0 +1,62 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="prepaymentData">
+            <h2><span>Prepayment Data</span> {{ prepaymentData.id }}</h2>
+
+            <hr>
+
+            <gha-alert-error></gha-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Account Name</span></dt>
+                <dd>
+                    <span>{{ prepaymentData.accountName }}</span>
+                </dd>
+                <dt><span>Description</span></dt>
+                <dd>
+                    <span>{{ prepaymentData.description }}</span>
+                </dd>
+                <dt><span>Account Number</span></dt>
+                <dd>
+                    <span>{{ prepaymentData.accountNumber }}</span>
+                </dd>
+                <dt><span>Expense Account Number</span></dt>
+                <dd>
+                    <span>{{ prepaymentData.expenseAccountNumber }}</span>
+                </dd>
+                <dt><span>Prepayment Number</span></dt>
+                <dd>
+                    <span>{{ prepaymentData.prepaymentNumber }}</span>
+                </dd>
+                <dt><span>Prepayment Date</span></dt>
+                <dd>
+                    <span>{{ prepaymentData.prepaymentDate }}</span>
+                </dd>
+                <dt><span>Prepayment Amount</span></dt>
+                <dd>
+                    <span>{{ prepaymentData.prepaymentAmount }}</span>
+                </dd>
+                <dt><span>Prepayment Periods</span></dt>
+                <dd>
+                    <span>{{ prepaymentData.prepaymentPeriods }}</span>
+                </dd>
+                <dt><span>Upload Token</span></dt>
+                <dd>
+                    <span>{{ prepaymentData.uploadToken }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/prepayment-data', prepaymentData.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

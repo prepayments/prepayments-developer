@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { PrepayssetsDevSharedModule } from 'app/shared/shared.module';
+import { PrepaymentsDeveloperSharedModule } from 'app/shared/shared.module';
 
 import { DocsComponent } from './docs.component';
 
 import { docsRoute } from './docs.route';
 
 @NgModule({
-  imports: [PrepayssetsDevSharedModule, RouterModule.forChild([docsRoute])],
+  imports: [PrepaymentsDeveloperSharedModule, RouterModule.forChild([docsRoute])],
   declarations: [DocsComponent],
 })
 export class DocsModule {}

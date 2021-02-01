@@ -1,0 +1,61 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="gha-compilation-request-heading">Create or edit a Compilation Request</h2>
+
+            <div>
+                <gha-alert-error></gha-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_description">Description</label>
+                    <input type="text" class="form-control" name="description" id="field_description"
+                           formControlName="description"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_fileUploadId">File Upload Id</label>
+                    <input type="number" class="form-control" name="fileUploadId" id="field_fileUploadId"
+                           formControlName="fileUploadId"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_compilationStatus">Compilation Status</label>
+                    <select class="form-control" name="compilationStatus" formControlName="compilationStatus" id="field_compilationStatus">
+                        <option value="IN_PROGRESS">IN_PROGRESS</option>
+                        <option value="COMPLETE">COMPLETE</option>
+                        <option value="FAILED">FAILED</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_compilationType">Compilation Type</label>
+                    <select class="form-control" name="compilationType" formControlName="compilationType" id="field_compilationType">
+                        <option value="AMORTIZATION_ENTRY_COMPILATION">AMORTIZATION_ENTRY_COMPILATION</option>
+                        <option value="PREPAYMENT_ENTRY_COMPILATION">PREPAYMENT_ENTRY_COMPILATION</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_compilationToken">Compilation Token</label>
+                    <input type="text" class="form-control" name="compilationToken" id="field_compilationToken"
+                           formControlName="compilationToken"/>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

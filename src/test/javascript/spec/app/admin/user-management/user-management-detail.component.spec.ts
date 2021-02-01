@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { of } from 'rxjs';
 
 import { Authority } from 'app/shared/constants/authority.constants';
-import { PrepayssetsDevTestModule } from '../../../test.module';
+import { PrepaymentsDeveloperTestModule } from '../../../test.module';
 import { UserManagementDetailComponent } from 'app/admin/user-management/user-management-detail.component';
 import { User } from 'app/core/user/user.model';
 
@@ -17,7 +17,7 @@ describe('Component Tests', () => {
 
     beforeEach(async(() => {
       TestBed.configureTestingModule({
-        imports: [PrepayssetsDevTestModule],
+        imports: [PrepaymentsDeveloperTestModule],
         declarations: [UserManagementDetailComponent],
         providers: [
           {

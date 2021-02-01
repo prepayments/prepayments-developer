@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
-import { PrepayssetsDevSharedLibsModule } from './shared-libs.module';
+import { PrepaymentsDeveloperSharedLibsModule } from './shared-libs.module';
 import { AlertComponent } from './alert/alert.component';
 import { AlertErrorComponent } from './alert/alert-error.component';
 import { LoginModalComponent } from './login/login.component';
 import { HasAnyAuthorityDirective } from './auth/has-any-authority.directive';
 
 @NgModule({
-  imports: [PrepayssetsDevSharedLibsModule],
+  imports: [PrepaymentsDeveloperSharedLibsModule],
   declarations: [AlertComponent, AlertErrorComponent, LoginModalComponent, HasAnyAuthorityDirective],
   entryComponents: [LoginModalComponent],
-  exports: [PrepayssetsDevSharedLibsModule, AlertComponent, AlertErrorComponent, LoginModalComponent, HasAnyAuthorityDirective],
+  exports: [PrepaymentsDeveloperSharedLibsModule, AlertComponent, AlertErrorComponent, LoginModalComponent, HasAnyAuthorityDirective],
 })
-export class PrepayssetsDevSharedModule {}
+export class PrepaymentsDeveloperSharedModule {}

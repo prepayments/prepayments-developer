@@ -1,8 +1,8 @@
 version: '3'
 
 services:
-  prepayssets-developer:
+  prepayments-developer:
     build: .
-    container_name: prepayments/prepayssets-dev:0.0.1-SNAPSHOT
+    container_name: prepayments/prepayments-developer:0.0.1-SNAPSHOT
     ports:
       - 8000:15003

@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="prepsFileType">
+            <h2><span>Preps File Type</span> {{ prepsFileType.id }}</h2>
+
+            <hr>
+
+            <gha-alert-error></gha-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Preps File Type Name</span></dt>
+                <dd>
+                    <span>{{ prepsFileType.prepsFileTypeName }}</span>
+                </dd>
+                <dt><span>Preps File Medium Type</span></dt>
+                <dd>
+                    <span>{{ prepsFileType.prepsFileMediumType }}</span>
+                </dd>
+                <dt><span>Description</span></dt>
+                <dd>
+                    <span>{{ prepsFileType.description }}</span>
+                </dd>
+                <dt><span>File Template</span></dt>
+                <dd>
+                    <div *ngIf="prepsFileType.fileTemplate">
+                        <a (click)="openFile(prepsFileType.fileTemplateContentType, prepsFileType.fileTemplate)">open</a>
+                        {{ prepsFileType.fileTemplateContentType }}, {{ byteSize(prepsFileType.fileTemplate) }}
+                    </div>
+                </dd>
+                <dt><span>Prepsfile Type</span></dt>
+                <dd>
+                    <span>{{ prepsFileType.prepsfileType }}</span>
+                </dd>
+                <dt><span>Prepsfile Delete Process Type</span></dt>
+                <dd>
+                    <span>{{ prepsFileType.prepsfileDeleteProcessType }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/preps-file-type', prepsFileType.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

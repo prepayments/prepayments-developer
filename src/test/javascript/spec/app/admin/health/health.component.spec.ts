@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 import { HttpErrorResponse } from '@angular/common/http';
 import { of, throwError } from 'rxjs';
 
-import { PrepayssetsDevTestModule } from '../../../test.module';
+import { PrepaymentsDeveloperTestModule } from '../../../test.module';
 import { HealthComponent } from 'app/admin/health/health.component';
 import { HealthService, Health } from 'app/admin/health/health.service';
 
@@ -14,7 +14,7 @@ describe('Component Tests', () => {
 
     beforeEach(async(() => {
       TestBed.configureTestingModule({
-        imports: [PrepayssetsDevTestModule],
+        imports: [PrepaymentsDeveloperTestModule],
         declarations: [HealthComponent],
       })
         .overrideTemplate(HealthComponent, '')

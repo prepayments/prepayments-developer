@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "prepayssets-dev": {
+    "prepayments-developer": {
       "root": "",
       "sourceRoot": "src/main/webapp",
       "projectType": "application",
@@ -29,7 +29,7 @@
       "architect": {}
     }
   },
-  "defaultProject": "prepayssets-dev",
+  "defaultProject": "prepayments-developer",
   "cli": {
     "packageManager": "npm"
   }

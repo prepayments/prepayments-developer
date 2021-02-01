@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import './vendor';
-import { PrepayssetsDevSharedModule } from 'app/shared/shared.module';
-import { PrepayssetsDevCoreModule } from 'app/core/core.module';
-import { PrepayssetsDevAppRoutingModule } from './app-routing.module';
-import { PrepayssetsDevHomeModule } from './home/home.module';
-import { PrepayssetsDevEntityModule } from './entities/entity.module';
+import { PrepaymentsDeveloperSharedModule } from 'app/shared/shared.module';
+import { PrepaymentsDeveloperCoreModule } from 'app/core/core.module';
+import { PrepaymentsDeveloperAppRoutingModule } from './app-routing.module';
+import { PrepaymentsDeveloperHomeModule } from './home/home.module';
+import { PrepaymentsDeveloperEntityModule } from './entities/entity.module';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { MainComponent } from './layouts/main/main.component';
 import { NavbarComponent } from './layouts/navbar/navbar.component';
@@ -17,14 +17,14 @@ import { ErrorComponent } from './layouts/error/error.component';
 @NgModule({
   imports: [
     BrowserModule,
-    PrepayssetsDevSharedModule,
-    PrepayssetsDevCoreModule,
-    PrepayssetsDevHomeModule,
+    PrepaymentsDeveloperSharedModule,
+    PrepaymentsDeveloperCoreModule,
+    PrepaymentsDeveloperHomeModule,
     // jhipster-needle-angular-add-module JHipster will add new module here
-    PrepayssetsDevEntityModule,
-    PrepayssetsDevAppRoutingModule,
+    PrepaymentsDeveloperEntityModule,
+    PrepaymentsDeveloperAppRoutingModule,
   ],
   declarations: [MainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, FooterComponent],
   bootstrap: [MainComponent],
 })
-export class PrepayssetsDevAppModule {}
+export class PrepaymentsDeveloperAppModule {}

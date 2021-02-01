@@ -1,0 +1,70 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="amortizationEntry">
+            <h2><span>Amortization Entry</span> {{ amortizationEntry.id }}</h2>
+
+            <hr>
+
+            <gha-alert-error></gha-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Account Name</span></dt>
+                <dd>
+                    <span>{{ amortizationEntry.accountName }}</span>
+                </dd>
+                <dt><span>Description</span></dt>
+                <dd>
+                    <span>{{ amortizationEntry.description }}</span>
+                </dd>
+                <dt><span>Account Number</span></dt>
+                <dd>
+                    <span>{{ amortizationEntry.accountNumber }}</span>
+                </dd>
+                <dt><span>Expense Account Number</span></dt>
+                <dd>
+                    <span>{{ amortizationEntry.expenseAccountNumber }}</span>
+                </dd>
+                <dt><span>Prepayment Number</span></dt>
+                <dd>
+                    <span>{{ amortizationEntry.prepaymentNumber }}</span>
+                </dd>
+                <dt><span>Prepayment Date</span></dt>
+                <dd>
+                    <span>{{ amortizationEntry.prepaymentDate }}</span>
+                </dd>
+                <dt><span>Transaction Amount</span></dt>
+                <dd>
+                    <span>{{ amortizationEntry.transactionAmount }}</span>
+                </dd>
+                <dt><span>Amortization Date</span></dt>
+                <dd>
+                    <span>{{ amortizationEntry.amortizationDate }}</span>
+                </dd>
+                <dt><span>Upload Token</span></dt>
+                <dd>
+                    <span>{{ amortizationEntry.uploadToken }}</span>
+                </dd>
+                <dt><span>Prepayment Data Id</span></dt>
+                <dd>
+                    <span>{{ amortizationEntry.prepaymentDataId }}</span>
+                </dd>
+                <dt><span>Compilation Token</span></dt>
+                <dd>
+                    <span>{{ amortizationEntry.compilationToken }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/amortization-entry', amortizationEntry.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

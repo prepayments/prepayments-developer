@@ -1,0 +1,65 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="prepsFileUpload">
+            <h2><span>Preps File Upload</span> {{ prepsFileUpload.id }}</h2>
+
+            <hr>
+
+            <gha-alert-error></gha-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Description</span></dt>
+                <dd>
+                    <span>{{ prepsFileUpload.description }}</span>
+                </dd>
+                <dt><span>File Name</span></dt>
+                <dd>
+                    <span>{{ prepsFileUpload.fileName }}</span>
+                </dd>
+                <dt><span>Period From</span></dt>
+                <dd>
+                    <span>{{ prepsFileUpload.periodFrom }}</span>
+                </dd>
+                <dt><span>Period To</span></dt>
+                <dd>
+                    <span>{{ prepsFileUpload.periodTo }}</span>
+                </dd>
+                <dt><span>Preps File Type Id</span></dt>
+                <dd>
+                    <span>{{ prepsFileUpload.prepsFileTypeId }}</span>
+                </dd>
+                <dt><span>Data File</span></dt>
+                <dd>
+                    <div *ngIf="prepsFileUpload.dataFile">
+                        <a (click)="openFile(prepsFileUpload.dataFileContentType, prepsFileUpload.dataFile)">open</a>
+                        {{ prepsFileUpload.dataFileContentType }}, {{ byteSize(prepsFileUpload.dataFile) }}
+                    </div>
+                </dd>
+                <dt><span>Upload Successful</span></dt>
+                <dd>
+                    <span>{{ prepsFileUpload.uploadSuccessful }}</span>
+                </dd>
+                <dt><span>Upload Processed</span></dt>
+                <dd>
+                    <span>{{ prepsFileUpload.uploadProcessed }}</span>
+                </dd>
+                <dt><span>Upload Token</span></dt>
+                <dd>
+                    <span>{{ prepsFileUpload.uploadToken }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/preps-file-upload', prepsFileUpload.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

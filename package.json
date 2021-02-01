@@ -1,7 +1,7 @@
 {
-  "name": "prepayssets-dev",
+  "name": "prepayments-developer",
   "version": "0.0.1-SNAPSHOT",
-  "description": "Angular client for prepayments and assets developer edition",
+  "description": "Angular client for prepayments and assets  management system; developer edition",
   "private": true,
   "license": "GPLv3",
   "cacheDirectories": [

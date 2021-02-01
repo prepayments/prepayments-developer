@@ -1,0 +1,84 @@
+<div>
+    <h2 id="page-heading">
+        <span>Preps File Types</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-preps-file-type" [routerLink]="['/preps-file-type/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span>
+            Create a new Preps File Type
+            </span>
+        </button>
+    </h2>
+
+    <gha-alert-error></gha-alert-error>
+
+    <gha-alert></gha-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="prepsFileTypes?.length === 0">
+        <span>No prepsFileTypes found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="prepsFileTypes && prepsFileTypes.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span>ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="prepsFileTypeName"><span>Preps File Type Name</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="prepsFileMediumType"><span>Preps File Medium Type</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="description"><span>Description</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="fileTemplate"><span>File Template</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="prepsfileType"><span>Prepsfile Type</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="prepsfileDeleteProcessType"><span>Prepsfile Delete Process Type</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let prepsFileType of prepsFileTypes ;trackBy: trackId">
+                    <td><a [routerLink]="['/preps-file-type', prepsFileType.id, 'view']">{{ prepsFileType.id }}</a></td>
+                    <td>{{ prepsFileType.prepsFileTypeName }}</td>
+                    <td>{{ prepsFileType.prepsFileMediumType }}</td>
+                    <td>{{ prepsFileType.description }}</td>
+                    <td>
+                        <a *ngIf="prepsFileType.fileTemplate" (click)="openFile(prepsFileType.fileTemplateContentType, prepsFileType.fileTemplate)">open</a>
+                        <span *ngIf="prepsFileType.fileTemplate">{{ prepsFileType.fileTemplateContentType }}, {{ byteSize(prepsFileType.fileTemplate) }}</span>
+                    </td>
+                    <td>{{ prepsFileType.prepsfileType }}</td>
+                    <td>{{ prepsFileType.prepsfileDeleteProcessType }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/preps-file-type', prepsFileType.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/preps-file-type', prepsFileType.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(prepsFileType)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="prepsFileTypes && prepsFileTypes.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>
