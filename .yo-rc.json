@@ -2,10 +2,10 @@
   "generator-jhipster": {
     "jhipsterVersion": "6.10.5",
     "applicationType": "monolith",
-    "baseName": "prepaymentsDev",
+    "baseName": "prepayssetsDev",
     "useSass": true,
     "clientPackageManager": "npm",
-    "clientFramework": "react",
+    "clientFramework": "AngularX",
     "clientTheme": "flatly",
     "clientThemeVariant": "primary",
     "authenticationType": "jwt",
