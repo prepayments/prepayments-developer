@@ -1,6 +1,6 @@
 version: '3'
 services:
-  prepayments-client:
+  prepayssets-developer:
     image: prepayments/prepayssets-dev:0.0.1-SNAPSHOT
     ports:
       - 15003:80
