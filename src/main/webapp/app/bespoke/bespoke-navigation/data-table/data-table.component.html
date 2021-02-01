@@ -1,0 +1,64 @@
+<li
+    *jhiHasAnyAuthority="'ROLE_USER'"
+    ngbDropdown
+    class="nav-item dropdown pointer"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+>
+    <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="admin-menu">
+        <span>
+          <fa-icon icon="book"></fa-icon>
+          <span>Data Tables</span>
+        </span>
+    </a>
+    <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="admin-menu">
+        <li>
+            <a class="dropdown-item" routerLink="/data/dt/tables/ledgers" routerLinkActive="active">
+                <fa-icon icon="asterisk"></fa-icon>
+                <span>Ledgers List</span>
+            </a>
+        </li>
+        <li>
+            <a class="dropdown-item" (click)="navigateLoanAccount()" routerLinkActive="active">
+                <fa-icon icon="asterisk"></fa-icon>
+                <span>Loan Accounts</span>
+            </a>
+        </li>
+        <li>
+            <a class="dropdown-item" (click)="navigateSummaryBranchAdvances()" routerLinkActive="active">
+                <fa-icon icon="asterisk"></fa-icon>
+                <span>Branch Advances Summary</span>
+            </a>
+        </li>
+        <li>
+            <a class="dropdown-item" (click)="navigateSummaryCurrencyReport()" routerLinkActive="active">
+                <fa-icon icon="asterisk"></fa-icon>
+                <span>Currency Aggregate Summary</span>
+            </a>
+        </li>
+        <li>
+            <a class="dropdown-item" (click)="navigateSummaryMoneyMarketAdvances()" routerLinkActive="active">
+                <fa-icon icon="asterisk"></fa-icon>
+                <span>Money Market Advances Summary</span>
+            </a>
+        </li>
+        <li>
+            <a class="dropdown-item" (click)="navigateSummarySbuAdvances()" routerLinkActive="active">
+                <fa-icon icon="asterisk"></fa-icon>
+                <span>SBU Advances Summary</span>
+            </a>
+        </li>
+        <li>
+            <a class="dropdown-item" (click)="navigateTableFNewAdvances()" routerLinkActive="active">
+                <fa-icon icon="asterisk"></fa-icon>
+                <span>Table F New</span>
+            </a>
+        </li>
+        <li>
+            <a class="dropdown-item" (click)="navigateTableFAdvances()" routerLinkActive="active">
+                <fa-icon icon="asterisk"></fa-icon>
+                <span>Table F</span>
+            </a>
+        </li>
+    </ul>
+</li>
